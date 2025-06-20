@@ -1,0 +1,39 @@
+{
+  "name": "caching_proxy",
+  "version": "1.0.0",
+  "description": "- high-level overview of what the software is   - A caching proxy designed to run on a personal device to allow for viewing websites offline with (or without) an https connection. The caching proxy is also a man-in-the-middle proxy, because mitm is required to support secure browsing while also caching a websites responses locally.   - mitm capabilities     - https messages must be decrypted for caching     - requires creating a root cert and trusting it on the host machine     - root cert allows for generating certs for each domain - motivations   - devdocs.io great but needed more.   - reduce unnecessary network bandwidth for frequently visited sites.   - add others",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "npx tsx --env-file=\".env\" index.ts",
+    "test": "jest --config  jest.config.js",
+    "compile": "npx tsc -p tsconfig.json",
+    "watch": "(npx tsc -p tsconfig.json --watch)&",
+    "debug": "npx tsx --env-file=\".env\" --inspect index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.29.0",
+    "eslint": "^9.29.0",
+    "globals": "^16.2.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.34.0"
+  },
+  "dependencies": {
+    "@types/node": "^22.15.30",
+    "playwright": "^1.52.0"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anthnyalxndr/caching_proxy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anthnyalxndr/caching_proxy/issues"
+  },
+  "homepage": "https://github.com/anthnyalxndr/caching_proxy#readme"
+}

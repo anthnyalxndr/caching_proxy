@@ -1,0 +1,11 @@
+{
+  "example.com": {
+    "updateFrequency": 30
+  },
+  "developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Proxy_servers_and_tunneling": {
+    "updateFrequency": 7
+  },
+  "nodejs.org/docs/latest/api/zlib.html": {
+    "updateFrequency": 1
+  }
+}

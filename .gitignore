@@ -1,0 +1,11 @@
+*
+!.gitignore
+!cache_manager.ts
+!caching_proxy.ts
+!example.ts
+!openssl.cnf
+!package-lock.json
+!package.json
+!README.md
+!sample_config.json
+!tsconfig.json
