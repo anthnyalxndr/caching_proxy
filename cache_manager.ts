@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/non-nullable-type-assertion-style */
 import http, { IncomingMessage } from "node:http";
 import fs, { promises as fsp } from "node:fs";
 import stream, { Readable } from "node:stream";
@@ -500,14 +499,14 @@ export default class CacheManager {
         ]);
 
         for (let i = 0; i < headers.length; i += 2) {
-            if (contentHeaders.has(headers[i] as string)) {
+            if (contentHeaders.has(headers[i]!)) {
                 headers.splice(i, 2);
                 i -= 2;
             }
         }
         // Mutate cached res properties
         cachedRes.statusCode = 304;
-        cachedRes.statusMessage = http.STATUS_CODES[304] as string;
+        cachedRes.statusMessage = http.STATUS_CODES[304]!;
         cachedRes.body = undefined;
     }
 
@@ -693,7 +692,7 @@ export default class CacheManager {
         const urlObj = new URL("https://" + url);
         const resource = (urlObj.hostname + urlObj.pathname).replace(/\/$/, "");
         const pathArr = resource.split("/");
-        const filename = (pathArr.at(-1) as string) + ".json";
+        const filename = pathArr.at(-1)! + ".json";
         const path = [this.resCache, ...pathArr, ""].join("/");
         const filepath = path + filename;
         return { path, filename, filepath };
